@@ -1,103 +1,165 @@
+import ContactForm from "@/components/ContactForm";
+import CounterSection from "@/components/CounterSection";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      {/* Hero Section */}
+      <div id="home" className="f-section-large">
+        <div className="f-container-regular">
+          <div className="w-layout-grid f-header-grid">
+            <div>
+              <div className="f-margin-bottom-24">
+                <h1 className="f-h1-heading">
+                  <strong>
+                    Catalysing Connectivity Between Emerging Real Estate
+                    Managers, Landlords and Capital Partners
+                  </strong>
+                </h1>
+              </div>
+              <div className="f-margin-bottom-32">
+                <p className="f-paragraph-large">
+                  Identify and monitor high-potential real estate operators. Stay
+                  at the forefront of the evolving real estate landscape.
+                </p>
+              </div>
+            </div>
+            <div className="f-header-image-wrapper-tall">
+              <Image
+                src="/images/hero-image.avif"
+                width={1024}
+                height={768}
+                alt="Real estate buildings"
+                className="f-image-cover"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Counter Section */}
+      <CounterSection sectorCount={40} companyCount={200} />
+
+      {/* Problem Section */}
+      <div id="problem" className="f-section-large grey-background">
+        <div className="f-container-regular-2">
+          <div className="f-header-title-wrapper-center">
+            <div className="f-margin-bottom-12">
+              <span className="f-heading-detail-small">Problem</span>
+            </div>
+            <div className="f-margin-bottom-128">
+              <div className="f-margin-bottom-16">
+                <h3 className="f-h3-heading">
+                  The Real Estate Information Gap: Disconnected Players, Missed
+                  Opportunities.
+                </h3>
+              </div>
+              <p className="f-paragraph-large-2">
+                The digital revolution has transformed real estate into a more
+                fluid, short-term income-producing asset class that requires
+                active management. This shift has fuelled the rise of real estate
+                entrepreneurs launching independent, sector-specialized operating
+                companies. Our database connects these emerging managers with
+                capital.
+              </p>
+            </div>
+          </div>
+          
+          {/* Problem Cards */}
+          <div className="w-layout-grid f-grid-two-column">
+            <div className="div-block-8">
+              <div className="div-block">
+                <div className="f-feature-icon-wrapper">
+                  <Image
+                    src="/images/investor.png"
+                    width={64}
+                    height={64}
+                    alt="Image of an investor"
+                  />
+                </div>
+                <div>
+                  <div className="f-sub-heading-large">
+                    <span className="text-span-5">Investors</span>
+                  </div>
+                </div>
+              </div>
+              <p className="f-paragraph-small">
+                Absence of a centralized platform to track real estate operators
+                across geographies and subsectors, resulting in missed
+                opportunities for investors seeking emerging ventures across
+                regions and sectors.
+              </p>
+            </div>
+            <div className="div-block-8">
+              <div className="div-block">
+                <div className="f-feature-icon-wrapper">
+                  <Image
+                    src="/images/shuttle.png"
+                    width={64}
+                    height={64}
+                    alt="Image of a shuttle representing high-growing startup"
+                  />
+                </div>
+                <div className="f-margin-bottom-33">
+                  <div className="f-sub-heading-large">
+                    <span className="text-span-6">Companies</span>
+                  </div>
+                </div>
+              </div>
+              <p className="f-paragraph-small">
+                Companies face challenges in expanding their reach beyond local
+                networks, restricting access to capital and hindering growth
+                potential.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* More sections will be added here... */}
+      
+      {/* CTA Section */}
+      <div id="cta" className="f-section-large">
+        <div className="f-container-regular-5">
+          <div className="w-layout-grid f-header-grid-2">
+            <div className="target-card investor">
+              <div className="f-cta-text-wrapper-center">
+                <div className="f-margin-bottom-135">
+                  <h2 className="f-h2-heading">Interested to get access?</h2>
+                </div>
+                <div className="f-margin-bottom-48">
+                  <p className="f-paragraph-large">
+                    Request access by providing your email below
+                  </p>
+                </div>
+                <ContactForm />
+              </div>
+            </div>
+            <div className="target-card company">
+              <div className="f-cta-text-wrapper-center">
+                <div className="f-margin-bottom-135">
+                  <h2 className="f-h2-heading">Ready to fill the form?</h2>
+                </div>
+                <div className="f-margin-bottom-48">
+                  <p className="f-paragraph-large">
+                    Provide your key information to be included in our database
+                  </p>
+                </div>
+                <div className="f-cta-form-block">
+                  <Link
+                    href="/company-form"
+                    className="f-button-primary fill-form"
+                  >
+                    <div>Fill Company Form</div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
-}
+} 
