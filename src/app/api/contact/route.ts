@@ -1,19 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// This would be replaced with actual database connection code
-// using your preferred solution (Supabase, MongoDB, etc.)
-const saveContactToDatabase = async (email: string) => {
-  // In a real implementation, this would save to a database
-  console.log(`Saving contact email: ${email}`);
-  // For now, just simulate a database save
-  return { success: true, id: Date.now() };
-};
-
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
     
-    // Validate email
+    // Validate email format
     if (!data.email || !/^\S+@\S+\.\S+$/.test(data.email)) {
       return NextResponse.json(
         { error: "Valid email is required" },
@@ -21,25 +12,22 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Save to database (simulated for now)
-    const result = await saveContactToDatabase(data.email);
+    // In a real implementation, you would:
+    // 1. Add this to a database or mailing list
+    // 2. Send a notification email
+    // 3. Maybe integrate with a CRM like HubSpot, Mailchimp, etc.
     
-    // In a production app, you'd use:
-    // 1. An actual database connection (Supabase, MongoDB, etc.)
-    // 2. Possibly an email service to send confirmation
-    // 3. Better error handling and security measures
-
+    console.log("Access request received:", data.email);
+    
+    // Simulate a successful submission
     return NextResponse.json(
-      { 
-        message: "Contact submitted successfully", 
-        id: result.id 
-      }, 
+      { message: "Thank you for your interest! We'll be in touch soon." },
       { status: 200 }
     );
   } catch (error) {
     console.error("Error processing contact form:", error);
     return NextResponse.json(
-      { error: "Failed to process contact form" },
+      { error: "Failed to process your request" },
       { status: 500 }
     );
   }

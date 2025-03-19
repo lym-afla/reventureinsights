@@ -1,8 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Define a proper interface for company data
+interface CompanyProfile {
+  companyName: string;
+  website?: string;
+  foundedYear?: string;
+  sector: string;
+  description: string;
+  contactName: string;
+  contactEmail: string;
+  contactPhone?: string;
+  fundingStage?: string;
+  teamSize?: string;
+}
+
 // This would be replaced with actual database connection code
 // using your preferred solution (Supabase, MongoDB, etc.)
-const saveCompanyProfileToDatabase = async (companyData: any) => {
+const saveCompanyProfileToDatabase = async (companyData: CompanyProfile) => {
   // In a real implementation, this would save to a database
   console.log("Saving company profile:", companyData);
   // For now, just simulate a database save
@@ -11,13 +25,13 @@ const saveCompanyProfileToDatabase = async (companyData: any) => {
 
 export async function POST(request: NextRequest) {
   try {
-    const data = await request.json();
+    const data = await request.json() as CompanyProfile;
     
     // Validate required fields
     const requiredFields = ['companyName', 'sector', 'description', 'contactName', 'contactEmail'];
     
     for (const field of requiredFields) {
-      if (!data[field]) {
+      if (!data[field as keyof CompanyProfile]) {
         return NextResponse.json(
           { error: `${field} is required` },
           { status: 400 }
